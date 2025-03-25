@@ -13,4 +13,5 @@ return {
     require("plugins.keybindings").setup(),
     require("plugins.settings").setup(),
     require("plugins.trouble"),
+    require("plugins.venvselector"),
 }
