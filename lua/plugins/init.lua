@@ -9,4 +9,8 @@ return {
     require("plugins.vimfugitive"),
     require("plugins.lsp"),
     require("plugins.colors"),
+    require("plugins.snippets"),
+    require("plugins.keybindings").setup(),
+    require("plugins.settings").setup(),
+    require("plugins.trouble"),
 }
