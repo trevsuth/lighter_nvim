@@ -1,8 +1,8 @@
 local M = {}
 
 function M.setup()
-	vim.keymap.set("n", "<leader>Tsv", "<cmd>vsp term://", { desc = "Open vertical terminal split" })
-	vim.keymap.set("n", "<leader>Tsh", "<cmd>sp term://",  { desc = "Open horizontal terminal split" })
+	vim.keymap.set("n", "<leader>Tsv", "<cmd>vsp term://<CR>", { desc = "Open vertical terminal split" })
+	vim.keymap.set("n", "<leader>Tsh", "<cmd>sp term://<CR>",  { desc = "Open horizontal terminal split" })
 	vim.keymap.set("n", "L", "vg_",    { desc = "Select to end of line" })
 	vim.keymap.set('n', '<leader>pa', 'ggVGp',         { desc = "select all and paste" })
 	vim.keymap.set('n', '<leader>sa', 'ggVG',          { desc = "select all" })
