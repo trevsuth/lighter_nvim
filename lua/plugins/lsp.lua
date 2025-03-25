@@ -54,6 +54,10 @@ return {
                 python = { "black" },
             }
         })
+
+        require("lint").linters_by_ft = {
+            python = {'flake8', 'mypy', 'sonarlint-language-server'},
+        }
         local cmp = require('cmp')
         local cmp_lsp = require("cmp_nvim_lsp")
         local capabilities = vim.tbl_deep_extend(
