@@ -14,4 +14,5 @@ return {
     require("plugins.settings").setup(),
     require("plugins.trouble"),
     require("plugins.venvselector"),
+    require("plugins.lualine"),
 }
