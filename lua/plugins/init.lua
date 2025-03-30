@@ -1,18 +1,36 @@
 return {
+
+    ------------------------------------------------------------
+    -- Coding
+    ------------------------------------------------------------
     require("plugins.autopairs"),
+    require("plugins.snippets"),
+    require("plugins.venvselector"),
+
+    ------------------------------------------------------------
+    -- Navigation
+    ------------------------------------------------------------
     require("plugins.harpoon"),
-    require("plugins.telescope"),
-    require("plugins.whichkey"),
-    require("plugins.treesitter"),
-    require("plugins.undotree"),
     require("plugins.quickscope"),
+    require("plugins.telescope"),
+
+    ------------------------------------------------------------
+    -- UI
+    ------------------------------------------------------------
+    require("plugins.lualine"),
+    require("plugins.treesitter"),
+    require("plugins.trouble"),
+    require("plugins.undotree"),
+    require("plugins.whichkey"),
+
+    ------------------------------------------------------------
+    -- Git
+    ------------------------------------------------------------
     require("plugins.vimfugitive"),
+
+    ------------------------------------------------------------
+    -- LSP
+    ------------------------------------------------------------
     require("plugins.lsp"),
     require("plugins.colors"),
-    require("plugins.snippets"),
-    require("plugins.keybindings").setup(),
-    require("plugins.settings").setup(),
-    require("plugins.trouble"),
-    require("plugins.venvselector"),
-    require("plugins.lualine"),
 }
