@@ -6,6 +6,7 @@ return {
     require("plugins.autopairs"),
     require("plugins.snippets"),
     require("plugins.venvselector"),
+    require("plugins.signature"),
 
     ------------------------------------------------------------
     -- Navigation
@@ -22,6 +23,8 @@ return {
     require("plugins.trouble"),
     require("plugins.undotree"),
     require("plugins.whichkey"),
+    require("plugins.bufexplore"),
+    require("plugins.bufferline"),
 
     ------------------------------------------------------------
     -- Git
@@ -32,5 +35,4 @@ return {
     -- LSP
     ------------------------------------------------------------
     require("plugins.lsp"),
-    require("plugins.colors"),
 }

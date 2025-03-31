@@ -20,10 +20,13 @@ local on_attach = function(client, bufnr)
 
     -- === Format on Save ===
     if client.supports_method("textDocument/formatting") then
-        vim.api.nvim_clear_autocmds({ group = "LspFormatting", buffer = bufnr })
-        vim.api.nvim_create_augroup("LspFormatting", { clear = false })
+        -- Create the augroup and store its id
+        local formatting_group = vim.api.nvim_create_augroup("LspFormatting", { clear = true })
+        -- Clear any existing autocmds for this group on the current buffer
+        vim.api.nvim_clear_autocmds({ group = formatting_group, buffer = bufnr })
+        -- Create a new autocmd for formatting on save
         vim.api.nvim_create_autocmd("BufWritePre", {
-            group = "LspFormatting",
+            group = formatting_group,
             buffer = bufnr,
             callback = function()
                 vim.lsp.buf.format({ bufnr = bufnr, async = false })
@@ -56,7 +59,7 @@ return {
         })
 
         require("lint").linters_by_ft = {
-            python = {'flake8', 'mypy', 'sonarlint-language-server'},
+            python = { 'flake8', 'mypy', 'sonarlint-language-server' },
         }
         local cmp = require('cmp')
         local cmp_lsp = require("cmp_nvim_lsp")
@@ -98,7 +101,6 @@ return {
                     })
                     vim.g.zig_fmt_parse_errors = 0
                     vim.g.zig_fmt_autosave = 0
-
                 end,
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")

@@ -34,5 +34,8 @@ require("lazy").setup({
   checker = { enabled = true },
 })
 
-require("plugins.keybindings").setup()
-require("plugins.settings").setup()
+local colors = require("config.colors")
+colors.set("tokyonight")
+
+require("config.keybindings").setup()
+require("config.settings").setup()

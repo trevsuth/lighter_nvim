@@ -5,7 +5,7 @@ function M.setup()
     -- Terminal Splits
     ------------------------------------------------------------
     vim.keymap.set("n", "<leader>Tsv", "<cmd>vsp term://<CR>", { desc = "Open vertical terminal split" })
-    vim.keymap.set("n", "<leader>Tsh", "<cmd>sp term://<CR>",  { desc = "Open horizontal terminal split" })
+    vim.keymap.set("n", "<leader>Tsh", "<cmd>sp term://<CR>", { desc = "Open horizontal terminal split" })
 
     ------------------------------------------------------------
     -- Selection Operations
@@ -28,7 +28,8 @@ function M.setup()
     ------------------------------------------------------------
     vim.keymap.set({ "n", "v" }, "<leader>gbf", "<cmd>GBrowse<cr>", { desc = "Git browse current file in browser" })
     vim.keymap.set("n", "<leader>gbc", function() vim.cmd "GBrowse!" end, { desc = "Copy URL to current file" })
-    vim.keymap.set("v", "<leader>gbl", "<cmd>GBrowse!<CR>", { desc = "Git browse current file and selected line in browser" })
+    vim.keymap.set("v", "<leader>gbl", "<cmd>GBrowse!<CR>",
+        { desc = "Git browse current file and selected line in browser" })
     vim.keymap.set("n", "gd", "<cmd>Gvdiffsplit<CR>", { desc = "Git diff current file" })
 
     ------------------------------------------------------------
@@ -39,6 +40,7 @@ function M.setup()
     vim.keymap.set("n", "<leader>mk", "<cmd>m .-2<CR>==", { desc = "Move line up" })
     vim.keymap.set("v", "<leader>mj", "<cmd>m '>+1<CR>gv=gv", { desc = "Move line down in visual mode" })
     vim.keymap.set("v", "<leader>mk", "<cmd>m '<-2<CR>gv=gv", { desc = "Move line up in visual mode" })
+    vim.keymap.set("n", "<tab>", "<cmd>bnext<CR>", { desc = "Move to next tab" })
 
     ------------------------------------------------------------
     -- Search, Sort, and Replace
@@ -47,7 +49,7 @@ function M.setup()
     vim.keymap.set('n', '<leader>SS', '<cmd>%s/\\v', { desc = "Search and replace in file" })
     vim.keymap.set('v', '<leader><C-s>', '<cmd>s/\\%V', { desc = "Search only in visual selection using %V atom" })
     vim.keymap.set('v', '<leader><C-r>', '"hy:%s/\\v<C-r>h//g<left><left>', { desc = "Change selection" })
-    vim.keymap.set('v', '<leader>sl', function ()
+    vim.keymap.set('v', '<leader>sl', function()
         require("utils.sort_visual_lines").sort_visual_lines()
     end, { desc = "Sort Highlighted Lines" })
 
@@ -63,9 +65,12 @@ function M.setup()
     ------------------------------------------------------------
     vim.keymap.set("n", "<leader>yf", "<cmd>%y<cr>", { desc = "Yank current file to clipboard" })
     vim.keymap.set('n', '<leader>df', '<cmd>%d_<cr>', { desc = "Delete file content to black hole register" })
+    vim.keymap.set("n", "<leader>q", "<cmd>bd<CR>", { desc = "Close buffer" })
     vim.keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Quick save" })
     vim.keymap.set("n", "<leader>cx", "<cmd>!chmod +x %<cr>", { desc = "Make file executable" })
-    vim.keymap.set("n", "<leader>cpf", '<cmd>let @+ = expand("%:p")<cr>:lua print("Copied path to: " .. vim.fn.expand("%:p"))<cr>', { desc = "Copy current file name and path", silent = false })
+    vim.keymap.set("n", "<leader>cpf",
+        '<cmd>let @+ = expand("%:p")<cr>:lua print("Copied path to: " .. vim.fn.expand("%:p"))<cr>',
+        { desc = "Copy current file name and path", silent = false })
     vim.keymap.set("n", "<leader>ld", function()
         local current_dir = vim.fn.expand("%:p:h")
         require("plugins.utils.dump_lua_directory").dump_lua_directory(current_dir)
