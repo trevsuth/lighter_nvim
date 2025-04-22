@@ -14,7 +14,7 @@ return {
     require("plugins.harpoon"),
     require("plugins.quickscope"),
     require("plugins.telescope"),
-
+    require("plugins.vinegar"),
     ------------------------------------------------------------
     -- UI
     ------------------------------------------------------------
