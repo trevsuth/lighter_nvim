@@ -54,12 +54,12 @@ return {
     config = function()
         require("conform").setup({
             formatters_by_ft = {
-                python = { "black" },
+                python = { "ruff" },
             }
         })
 
         require("lint").linters_by_ft = {
-            python = { 'flake8', 'mypy', 'sonarlint-language-server' },
+            python = { 'ruff' },
         }
         local cmp = require('cmp')
         local cmp_lsp = require("cmp_nvim_lsp")
