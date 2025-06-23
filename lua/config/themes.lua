@@ -21,6 +21,9 @@ local themes = {
     bluloco = {
         'uloco/bluloco.nvim'
     },
+    nightfox = {
+        'EdenEast/nightfox.nvim'
+    },
 }
 
 return themes

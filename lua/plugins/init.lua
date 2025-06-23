@@ -13,6 +13,7 @@ return {
     ------------------------------------------------------------
     require("plugins.harpoon"),
     require("plugins.quickscope"),
+    require("plugins.leap"),
     require("plugins.telescope"),
     require("plugins.vinegar"),
     ------------------------------------------------------------

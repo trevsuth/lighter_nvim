@@ -41,6 +41,7 @@ function M.setup()
     vim.keymap.set("v", "<leader>mj", "<cmd>m '>+1<CR>gv=gv", { desc = "Move line down in visual mode" })
     vim.keymap.set("v", "<leader>mk", "<cmd>m '<-2<CR>gv=gv", { desc = "Move line up in visual mode" })
     vim.keymap.set("n", "<tab>", "<cmd>bnext<CR>", { desc = "Move to next tab" })
+    vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "Return to file view (oil)" })
 
     ------------------------------------------------------------
     -- Search, Sort, and Replace
