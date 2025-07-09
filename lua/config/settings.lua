@@ -21,6 +21,9 @@ function M.setup()
 
     vim.opt.termguicolors = true
     require("bufferline").setup{}
+
+    -- terafox colorscheme from nightfox
+    vim.cmd("colorscheme terafox")
 end
 
 return M
