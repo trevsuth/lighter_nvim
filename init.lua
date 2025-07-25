@@ -35,7 +35,7 @@ require("lazy").setup({
 })
 
 local colors = require("config.colors")
-colors.set("nightfox")
+colors.set("techbase")
 
 require("config.keybindings").setup()
 require("config.settings").setup()
