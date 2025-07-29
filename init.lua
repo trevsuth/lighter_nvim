@@ -35,7 +35,7 @@ require("lazy").setup({
 })
 
 local colors = require("config.colors")
-colors.set("techbase")
-
+colors.set("nightfox")
+vim.cmd("colorscheme terafox")
 require("config.keybindings").setup()
 require("config.settings").setup()

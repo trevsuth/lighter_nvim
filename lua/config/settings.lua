@@ -21,8 +21,6 @@ function M.setup()
 
     vim.opt.termguicolors = true
     require("bufferline").setup{}
-
-    --vim.cmd.colorscheme("techbase")
 end
 
 return M
